@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS image_service;
+
+USE image_service;
+
+CREATE TABLE IF NOT EXISTS images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(500),
+    image LONGBLOB,
+    detectionimage LONGBLOB,
+    people INT
+);
+
+CREATE TABLE IF NOT EXISTS subscriptions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(320)
+);
