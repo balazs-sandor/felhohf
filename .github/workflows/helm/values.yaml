@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: YOUR_DOCKERHUB_USERNAME/felhohf
+  pullPolicy: Always
+  tag: "latest"  # or use github.sha for unique versioning
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false  # Set to true if you want to use ingress for the application
+  name: ""
+  annotations: {}
+  hosts:
+    - host: my-php-app.local
+      paths:
+        - /
+
+resources: {}
