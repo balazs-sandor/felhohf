@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deepstack
+  namespace: felho-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deepstack
+  template:
+    metadata:
+      labels:
+        app: deepstack
+    spec:
+      containers:
+        - name: deepstack
+          image: deepquestai/deepstack:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: VISION-FACE
+              value: "true"  # or "VISION-DETECTION" if you want object detection
