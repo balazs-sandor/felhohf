@@ -1,2 +1,7 @@
-env:
-  APP_VERSION: 86987dcd0937a07dea7ed491c513b7c75d415daa
+image:
+  repository: <dockerhub-username>/felhohf
+
+APP_VERSION: latest
+
+mysql:
+  rootPassword: password
