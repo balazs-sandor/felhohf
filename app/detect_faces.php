@@ -2,7 +2,7 @@
 function detectFacesRaw($imagePath) {
 
     $img = base64_encode(file_get_contents($imagePath));
-    $response = file_get_contents("http://deepstack:5000/v1/vision/face", false, stream_context_create([
+    $response = file_get_contents("http://deepstack:5000/v1/vision/detection", false, stream_context_create([
         "http" => [
             "method"  => "POST",
             "header"  => "Content-Type: application/json",
