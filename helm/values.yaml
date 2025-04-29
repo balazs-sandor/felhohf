@@ -1,7 +1,7 @@
 image:
   repository: <dockerhub-username>/felhohf
 
-APP_VERSION: latest
+APP_VERSION: f7ea66fb0420dbc24dd0a9c7b8d8d81a35ab289f
 
 mysql:
   rootPassword: password
