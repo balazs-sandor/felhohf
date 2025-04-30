@@ -1,7 +1,7 @@
 image:
   repository: sandorbalu/felhohf
 
-APP_VERSION: 261b0ec5eec49ed32f5b9533f62c14a87e3ab7aa
+APP_VERSION: c7edc9687496e75beb775b431be1b9bfc4b2052b
 
 mysql:
   rootPassword: password
