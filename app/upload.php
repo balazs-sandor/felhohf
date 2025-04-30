@@ -7,17 +7,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $image = $_FILES['image'];
 
     if ($image['error'] === 0) {
-        $imageData = file_get_contents($image['tmp_name']);
 
 
-        $detectionImageData = detectFacesRaw($image['tmp_name']);
+        $detectionResult = detectFacesRaw($image['tmp_name']);
+
+        $detectionImage = $detectionResult['detectionImage'];
+        $peopleDetected = $detectionResult['detectionCount'];
+
 
         $stmt = $conn->prepare("INSERT INTO images (description, image, detectionimage, people) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sssi", $description, $imageData, $detectionImageData, $peopleDetected);
+        $stmt->bind_param("sssi", $description, $imageData, $detectionImage, $peopleDetected);
 
-        $peopleDetected = rand(1, 5);
         $stmt->send_long_data(1, $imageData);
-        $stmt->send_long_data(2, $detectionImageData);
+        $stmt->send_long_data(2, $detectionImage);
         $stmt->execute();
         $stmt->close();
 
