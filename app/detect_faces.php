@@ -2,6 +2,7 @@
 function detectFacesRaw($imagePath) {
     $visionhost = getenv('VISION_HOST') ?: '10.101.2.4';
     $url = 'http://' . $visionhost . ':5000/v1/vision/detection';
+    echo $url;
 
     // Check if the file exists
     if (!file_exists($imagePath)) {
@@ -28,6 +29,7 @@ function detectFacesRaw($imagePath) {
     if (curl_errno($ch)) {
         $error_msg = curl_error($ch);
         curl_close($ch);
+        echo "CURL error: $error_msg";
         return ['error' => $error_msg];
     }
 
