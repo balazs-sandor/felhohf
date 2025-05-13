@@ -27,3 +27,9 @@ spec:
                 secretKeyRef:
                   name: mysql-secret
                   key: password
+            - name: EMAIL_SERVER
+              value: "mail.nethely.hu"
+            - name: EMAIL_ADDR
+              value: "felhohf@vigyor.hu"
+            - name: EMAIL_PASS
+              value: "UPeBl7KKbgCHtxoV20szu"

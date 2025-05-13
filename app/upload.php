@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         require 'notify_subscribers.php';
         notifySubscribers($description, $peopleDetected);
 
-        header("Location: index.php");
+        //header("Location: index.php");
         exit();
     } else {
         echo "Hiba a fájlfeltöltés során.";
