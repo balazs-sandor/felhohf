@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($image['error'] === 0) {
 
+        $imageData = file_get_contents($image['tmp_name']);
 
         $detectionResult = detectFacesRaw($image['tmp_name']);
 
