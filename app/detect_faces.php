@@ -1,6 +1,7 @@
 <?php
 function detectFacesRaw($imagePath) {
-    $url = 'http://10.101.2.4:5000/v1/vision/detection';
+    $visionhost = getenv('VISION_HOST') ?: '10.101.2.4';
+    $url = 'http://' . $visionhost . ':5000/v1/vision/detection';
 
     // Check if the file exists
     if (!file_exists($imagePath)) {
