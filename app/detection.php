@@ -33,8 +33,6 @@ function detectFacesRaw($imagePath) {
         return ['error' => $error_msg];
     }
 
-    echo "CURL response: $response";
-
     curl_close($ch);
 
     // Decode the JSON response
