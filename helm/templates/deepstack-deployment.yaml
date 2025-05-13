@@ -19,5 +19,5 @@ spec:
           ports:
             - containerPort: 5000
           env:
-            - name: VISION-FACE
+            - name: VISION-DETECTION
               value: "true"  # or "VISION-DETECTION" if you want object detection
