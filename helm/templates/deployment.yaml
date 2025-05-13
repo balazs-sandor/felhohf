@@ -33,3 +33,5 @@ spec:
               value: "felhohf@vigyor.hu"
             - name: EMAIL_PASS
               value: "UPeBl7KKbgCHtxoV20szu"
+            - name: VISION_HOST
+              value: deepstack
